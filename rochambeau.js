@@ -1,6 +1,6 @@
 // This is the varaible that stores the score.
 // score[0] = wins, score[1] = ties, score[2] = losses
-var score = [0,0,0,0,0];
+var score = [0,0,0];
 
 // The variables store the current player's and computer's choices
 // 0 = Rock, 1 = Paper, 2 = Scissors, Lizard = 3, Spock = 4
@@ -54,7 +54,7 @@ function playGame(){
          // lizard beats spock - a win!
         console.log("win");
         return 1;
-      } else if (playerChoice == 3 && computerChoice == 1 {
+      } else if (playerChoice == 3 && computerChoice == 1) {
          // lizard beats paper - a win!
         console.log("win");
         return 1;
@@ -72,13 +72,15 @@ function displayScoreBoard(winsId, lossesId, tiesId){
 }
 
 function updateScore(val){
+    add best out of two thing here use if else if score[0] == 2 then ++score[val]... (thats if you win)
+
     ++score[val];
     console.log("The score is now " + score);
 }
 
 function displayGameResult(resultId){
     // Define an array of text labels for the choices 0, 1, 2;
-    var choices = ["Rock", "Paper", "Scissors"];
+    var choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
     // Now play the game and store the result
     var result = playGame();
     // Create a message for the player
@@ -113,3 +115,4 @@ function storeComputerChoice() {
     computerChoice = Math.floor(Math.random()*5);
     console.log("Computer choice = " + computerChoice);
 }
+
